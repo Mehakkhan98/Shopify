@@ -4,7 +4,6 @@ import { Entypo } from '@expo/vector-icons';
 import { StyleSheet, Text, View,TextInput } from 'react-native';
 import { Feather } from '@expo/vector-icons'; 
 
-
 export default function App(props) {
   const [eye, seteye] = useState(false);
   const checkeye=()=>{
@@ -23,9 +22,10 @@ else{
      borderColor:'#FFFFFF',
       marginVertical:10,
        borderWidth:1,borderRadius:5,flexDirection:'row',padding:10}}>
-      <Entypo name={props.name} size={28} 
-      //color="#0048B7"
-      color="#FFFFFF" />
+         {props.type==="Entypo"? <Entypo name={props.name} size={28}  color="#FFFFFF"/> : <Feather name={props.name}  color="#FFFFFF" size={28} />}
+      
+      {/* //color="#0048B7"
+      color="#FFFFFF" /> */}
       
        
         <TextInput  placeholder={props.data} 
@@ -43,16 +43,4 @@ else{
   );
 }
 
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#004B87',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-//   text:{
-//     color:'#ffff',
-//     fontSize:24,
-//     fontWeight:'bold'
-//   }
-// });
+

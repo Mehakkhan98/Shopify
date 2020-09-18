@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import {Image,View,Dimensions,ImageBackground,Text,StyleSheet,TouchableOpacity} from 'react-native' ;
+import {Image,View,Text,StyleSheet,TouchableOpacity} from 'react-native' ;
 import Form from '../Components/Form';
 import { Ionicons } from '@expo/vector-icons'; 
 import {Actions} from 'react-native-router-flux';
