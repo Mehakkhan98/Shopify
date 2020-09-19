@@ -18,11 +18,11 @@ else{
   return (
    <View>
       <View style={{height:50,width:400,
-     // borderColor:'#0048B7',
-     borderColor:'#FFFFFF',
-      marginVertical:10,
-       borderWidth:1,borderRadius:5,flexDirection:'row',padding:10}}>
-         {props.type==="Entypo"? <Entypo name={props.name} size={28}  color="#FFFFFF"/> : <Feather name={props.name}  color="#FFFFFF" size={28} />}
+    
+     borderBottomColor:'#03a9f4',
+      marginVertical:15,
+       borderBottomWidth:1,borderRadius:5,flexDirection:'row',padding:10}}>
+         {props.type==="Entypo"? <Entypo name={props.name} size={32}  color="#03a9f4"/> : <Feather name={props.name}  color="#03a9f4" size={28} />}
       
       {/* //color="#0048B7"
       color="#FFFFFF" /> */}
@@ -30,7 +30,7 @@ else{
        
         <TextInput  placeholder={props.data} 
         secureTextEntry={false}
-        placeholderColor='#666666' style={{marginLeft:10, color:"#FFFFFF",fontSize:20,width:300}} />
+        placeholderColor='#666666' style={{marginLeft:10, color:"gray",fontSize:20,width:300}} />
         
       
      

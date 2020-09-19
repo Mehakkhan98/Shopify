@@ -5,29 +5,45 @@ import Input from '../Components/Input';
 import Password from '../Components/Password';
 import Button from '../Components/Button';
 import { Actions } from 'react-native-router-flux';
+import Logo from '../Components/Logo'
+import { Entypo } from '@expo/vector-icons'; 
+import { AntDesign } from '@expo/vector-icons'; 
 export default function App() {
-  const Register=()=>{
+  const MovetoLogin=()=>{
     Actions.login();
   }
   
   return (
     <View style={styles.container}>
-    
+     <View style={{position:'absolute',top:50}}>
+       <Logo />
+      </View>
      <Input data="User Name" name="user" type="Entypo"/>
      <Input  data="Phone #" name="phone-call" type="Feather"/>
      <Input  data="E-mail" name="mail" type="Feather"/>
-     <Input data="Address" name="home" type="Entypo"/>
      <Password data="Password" name="lock" type="Entypo"/>
-     <Password data="Re-Password" name="lock" type="Entypo"/>
-     {/* <Button title="Register" Method="Register"/> */}
-     <Button title="Register" />
-     <TouchableOpacity onPress={Register} style={{position:'absolute',alignItems:'center',bottom:40}}>
-       <Text style={{
-        // color:'#0048B7',
-        color:'#FFFFFF',
-         fontSize:18,fontWeight:'bold'}}>Sign In</Text>
-
-</TouchableOpacity>
+     <Button title="REGISTER"  Method={MovetoLogin}/>
+     <View style={{position:'absolute',bottom:40,flexDirection:'row',left:22}}>
+       
+       <Text style={{color:'gray',fontSize:20,marginTop:3}}>or Sign In With</Text>
+       
+ 
+    <TouchableOpacity style={{marginLeft:50,marginRight:15}}>
+     <Entypo name="facebook" size={32} color="#03a9f4" />
+     </TouchableOpacity>
+    <TouchableOpacity style={{marginHorizontal:20}}>
+    <Entypo name="twitter" size={32} color="#03a9f4" />
+    </TouchableOpacity>
+    <TouchableOpacity style={{marginHorizontal:20}}>
+    <AntDesign name="google" size={32} color="red" />
+    </TouchableOpacity>
+    </View>
+    
+    
+   
+     
+     
+    
     </View>
   );
 }
@@ -35,7 +51,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#004B87',
+    backgroundColor: '#FFFFFF',
     alignItems: 'center',
     justifyContent: 'center',
   },

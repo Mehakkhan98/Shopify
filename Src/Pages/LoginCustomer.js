@@ -1,44 +1,76 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import {Image,View,Text,StyleSheet,TouchableOpacity} from 'react-native' ;
+import {Image,View,Text,StyleSheet,TouchableOpacity,KeyboardAvoidingView,ScrollView,Platform} from 'react-native' ;
 import Form from '../Components/Form';
 import { Ionicons } from '@expo/vector-icons'; 
+import TouchableText from '../Components/TouchableOpacity';
+import { Entypo } from '@expo/vector-icons'; 
 import {Actions} from 'react-native-router-flux';
+import { FontAwesome5 } from '@expo/vector-icons'; 
+import Logo from '../Components/Logo'
+
 export default function App() {
   const About_Us=()=>{
 Actions.About()
   }
-  const Register=()=>{
+  const MovetoRegister=()=>{
     Actions.register()
       }
+      const MovetoForgetPassword=()=>{
+        Actions.Forgetpass();
+      }
   return (
-    
-   <View style={styles.container}>
-     <StatusBar theme="dark" color="blue"/>
+    <View style={styles.container}>
+       <StatusBar theme="dark" color="blue"/>
+     
+       
       <TouchableOpacity  onPress={About_Us}style={{position:'absolute',top:15,right:18}}>
       <Ionicons name="ios-help-circle-outline" size={28} 
-      //color="#0048B7"
-      color="#FFFFFF" />
+      color="#03a9f4" />
       </TouchableOpacity>
+      <View style={{position:'absolute',top:50}}>
+       <Logo />
+      </View>
      
-     <Form/>
-     <TouchableOpacity onPress={Register}style={{position:'absolute',alignItems:'center',bottom:40}}>
-       <Text style={{
-        // color:'#0048B7',
-        color:'#FFFFFF',
-         fontSize:18,fontWeight:'bold'}}>Don't have an account yet?</Text>
+     
+     {/* <View style={{flexDirection:'row'}}>
+       <Text style={{fontSize:24,color:'black'}}>Sign In</Text>
+     </View> */}
+ 
+  
+    
+     
+     <Form type="LOGIN"/>
+    
+  
+<View style={{flexDirection:'row'}}>
+<TouchableText
+      style={{right:0,color:'gray',fontSize:18}}
+      title="Forget Password? "
+      parentstyle={{marginLeft:230}}
+      Move={MovetoForgetPassword}
+      />
+      <Entypo name="emoji-sad" size={18} color="gray" style={{marginTop:2}}/>
+</View>
+     
+      
+     
+      <TouchableOpacity onPress={MovetoRegister} style={{position:'absolute',bottom:40,flexDirection:'row'}}>
+        <Text style={{color:'gray',fontSize:20}}>Don't have an account yet? </Text>
+        <FontAwesome5 name="surprise" size={24} color="#03a9f4" />
+      </TouchableOpacity>
 
-</TouchableOpacity>
-   </View>
+
+      
+      </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-   // backgroundColor: '#FFFFFF',
-    backgroundColor: '#0048B7',
-
+   backgroundColor: '#FFFFFF',
+   
     alignItems: 'center',
     justifyContent: 'center',
   },

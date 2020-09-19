@@ -8,7 +8,8 @@ import Button from '../Components/Button';
 import { Actions } from 'react-native-router-flux';
 
 
-export default function App() {
+
+export default function App(props) {
   const Login=()=>{
     Actions.Home();
   }
@@ -16,10 +17,10 @@ export default function App() {
     
        <View>
      
-    <Input data="User Name" name="user" type="Entypo" />
+    <Input data="User Name" name="mail" type="Entypo" />
     <Password data="Password" name="lock" type="Entypo"/>
-    {/* <Button title="Login"  Method="Login"/> */}
-    <Button title="Login"/>
+    <Button title={props.type} Method={Login}/>
+   
   
 
     </View>
