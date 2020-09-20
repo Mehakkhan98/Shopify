@@ -22,7 +22,8 @@ else{
      borderBottomColor:'#03a9f4',
       marginVertical:15,
        borderBottomWidth:1,borderRadius:5,flexDirection:'row',padding:10}}>
-         {props.type==="Entypo"? <Entypo name={props.name} size={32}  color="#03a9f4"/> : <Feather name={props.name}  color="#03a9f4" size={28} />}
+         {props.type==="Entypo"? <Entypo name={props.name} size={32}  color="#03a9f4"/> 
+         : <Feather name={props.name}  color="#03a9f4" size={28} />}
       
       {/* //color="#0048B7"
       color="#FFFFFF" /> */}

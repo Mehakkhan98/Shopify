@@ -4,12 +4,10 @@ import { NavigationContainer } from '@react-navigation/native';
 import { MaterialCommunityIcons } from 'react-native-vector-icons';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { AntDesign ,Fontisto} from '@expo/vector-icons'; 
-
+import TopBar from '../Components/TopTabNavigation';
 function HomeScreen() {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Home Screen</Text>
-    </View>
+   <TopBar/>
   );
 }
 
@@ -45,7 +43,6 @@ const Tab = createMaterialBottomTabNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer>
       <Tab.Navigator
       initialRouteName="Home"
       activeColor="#03a9f4"
@@ -93,7 +90,7 @@ export default function App() {
         name="My Cart"
          component={My_CART} 
          options={{
-          tabBarLabel: 'Cart',
+          tabBarLabel: 'My Cart',
           tabBarIcon: ({ color, size }) => (
             <AntDesign name="shoppingcart" size={26}  color={color}
             />
@@ -139,6 +136,6 @@ export default function App() {
             }
         }}}/>
       </Tab.Navigator>
-    </NavigationContainer>
+  
   );
 }
