@@ -18,7 +18,8 @@ export default function App(props) {
        <View>
      
     <Input data="User Name" name="mail" type="Entypo" />
-    <Password data="Password" name="lock" type="Entypo"/>
+    <Password data="New Password" name="lock" type="Entypo"/>
+    {props.type==="UPDATE"?<Password data="Retype-Password" name="lock" type="Entypo"/>:null}
     <Button title={props.type} Method={Login}/>
    
   

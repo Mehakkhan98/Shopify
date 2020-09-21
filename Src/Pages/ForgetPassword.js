@@ -5,6 +5,7 @@ import Form from '../Components/Form';
 import { Ionicons } from '@expo/vector-icons'; 
 import TouchableText from '../Components/TouchableOpacity';
 import {Actions} from 'react-native-router-flux';
+import Logo from '../Components/Logo';
 textstyle={position:'absolute',right:10}
 export default function App() {
   const About_Us=()=>{
@@ -16,7 +17,9 @@ Actions.About()
   return (
     
    <View style={styles.container}>
-     <StatusBar theme="dark" color="blue"/>
+     <View style={{position:'absolute',top:50}}>
+       <Logo />
+      </View>
       <TouchableOpacity  onPress={About_Us}style={{position:'absolute',top:15,right:18}}>
       <Ionicons name="ios-help-circle-outline" size={28} 
       color="#FFFFFF" />
@@ -27,9 +30,7 @@ Actions.About()
       
      
      
-      <TouchableOpacity onPress={MovetoLogin} style={{position:'absolute',bottom:40}}>
-        <Text style={{color:'gray',fontSize:20}}>Sign In!?</Text>
-      </TouchableOpacity>
+     
 
 
    </View>

@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React,{useState} from 'react';
 import { Entypo } from '@expo/vector-icons'; 
-import { StyleSheet, Text, View,TextInput } from 'react-native';
+import { StyleSheet, Text, View,TextInput ,Platform} from 'react-native';
 import { Feather } from '@expo/vector-icons'; 
 
 export default function App(props) {
@@ -17,8 +17,9 @@ else{
   }
   return (
    <View>
-      <View style={{height:50,width:400,
-    
+      <View style={{height:50,
+      width:Platform.OS==='ios'?350:400,
+    alignSelf:'center',
      borderBottomColor:'#03a9f4',
       marginVertical:15,
        borderBottomWidth:1,borderRadius:5,flexDirection:'row',padding:10}}>
@@ -31,7 +32,7 @@ else{
        
         <TextInput  placeholder={props.data} 
         secureTextEntry={false}
-        placeholderColor='#666666' style={{marginLeft:10, color:"gray",fontSize:20,width:300}} />
+        placeholderColor='#666666' style={{marginLeft:10, color:"gray",fontSize:20, width:Platform.OS==='ios'?250:300}} />
         
       
      

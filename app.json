@@ -4,11 +4,11 @@
     "slug": "Shopify",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "Splash.jpeg",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "Splash.jpeg",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "blue"
     },
     "updates": {
       "fallbackToCacheTimeout": 0

@@ -13,28 +13,28 @@ function HomeScreen() {
 
 function Hot_Offers() {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center',backgroundColor:'#FFFFFF' }}>
       <Text>Hot_Offers!</Text>
     </View>
   );
 }
 function Search() {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center',backgroundColor:'#FFFFFF' }}>
       <Text>Search!</Text>
     </View>
   );
 }
 function My_CART() {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center',backgroundColor:'#FFFFFF' }}>
       <Text>My Cart</Text>
     </View>
   );
 }
 function My_Profile() {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' ,backgroundColor:'#FFFFFF'}}>
       <Text>My Profile</Text>
     </View>
   );

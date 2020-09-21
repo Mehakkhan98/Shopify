@@ -43,21 +43,21 @@ Actions.About()
      <Form type="LOGIN"/>
     
   
-<View style={{flexDirection:'row'}}>
+<View>
 <TouchableText
-      style={{right:0,color:'gray',fontSize:18}}
+      style={{right:Platform.OS==="ios"?10:0,color:'gray',fontSize:18}}
       title="Forget Password? "
       parentstyle={{marginLeft:230}}
       Move={MovetoForgetPassword}
       />
-      <Entypo name="emoji-sad" size={18} color="gray" style={{marginTop:2}}/>
+     
 </View>
      
       
      
       <TouchableOpacity onPress={MovetoRegister} style={{position:'absolute',bottom:40,flexDirection:'row'}}>
         <Text style={{color:'gray',fontSize:20}}>Don't have an account yet? </Text>
-        <FontAwesome5 name="surprise" size={24} color="#03a9f4" />
+        <FontAwesome5 name="surprise" size={24} color="gray" />
       </TouchableOpacity>
 
 

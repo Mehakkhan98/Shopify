@@ -5,7 +5,7 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 
 function Bags() {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center',backgroundColor:'#FFFFFF' }}>
       <Text>Bags Collection</Text>
     </View>
   );
@@ -13,21 +13,21 @@ function Bags() {
 
 function Western_Wear() {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center',backgroundColor:'#FFFFFF' }}>
       <Text>Western Wear Collection</Text>
     </View>
   );
 }
 function Jewellary() {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' ,backgroundColor:'#FFFFFF'}}>
         <Text>Jewellary Collection </Text>
       </View>
     );
   }
   function Accessories() {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' ,backgroundColor:'#FFFFFF'}}>
         <Text>Accessories</Text>
       </View>
     );
