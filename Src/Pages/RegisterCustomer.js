@@ -1,11 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View,TouchableOpacity } from 'react-native';
-import Input from '../Components/Input';
-import Password from '../Components/Password';
-import Button from '../Components/Button';
+import Input from '../Component/TextInput';
+import Password from '../Component/Password';
+import Button from '../Component/ReusableButton';
 import { Actions } from 'react-native-router-flux';
-import Logo from '../Components/Logo'
+import Logo from '../Component/Logo'
 import { Entypo } from '@expo/vector-icons'; 
 import { AntDesign } from '@expo/vector-icons'; 
 export default function App() {
@@ -31,10 +31,10 @@ export default function App() {
     <TouchableOpacity style={{marginLeft:50,marginRight:15}}>
      <Entypo name="facebook" size={32} color="#03a9f4" />
      </TouchableOpacity>
-    <TouchableOpacity style={{marginHorizontal:20}}>
+    <TouchableOpacity style={{marginHorizontal:Platform.OS==="ios"?17:20}}>
     <Entypo name="twitter" size={32} color="#03a9f4" />
     </TouchableOpacity>
-    <TouchableOpacity style={{marginHorizontal:20}}>
+    <TouchableOpacity style={{marginHorizontal:Platform.OS==="ios"?17:20}}>
     <AntDesign name="google" size={32} color="red" />
     </TouchableOpacity>
     </View>

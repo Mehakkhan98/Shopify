@@ -1,11 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import {Image,View,Text,StyleSheet,TouchableOpacity} from 'react-native' ;
-import Form from '../Components/Form';
+import Form from '../Component/Form';
 import { Ionicons } from '@expo/vector-icons'; 
-import TouchableText from '../Components/TouchableOpacity';
+import TouchableText from '../Component/TouchableText';
 import {Actions} from 'react-native-router-flux';
-import Logo from '../Components/Logo';
+import Logo from '../Component/Logo';
 textstyle={position:'absolute',right:10}
 export default function App() {
   const About_Us=()=>{

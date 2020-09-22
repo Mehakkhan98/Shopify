@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View,Image } from 'react-native';
-import Button from '../Components/Button';
+import Button from '../Component/ReusableButton';
 import {Actions} from 'react-native-router-flux';
 import Img from '../Images/img1.jpg';
 export default function App() {
@@ -10,7 +10,7 @@ export default function App() {
     }
   return (
       <View style={styles.container}>
-          
+        
           <Image source={Img} alt="bags image"   style={{ height:300,width:400,alignSelf:'center'
  }}/>
           
