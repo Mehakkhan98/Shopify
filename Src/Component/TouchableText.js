@@ -13,7 +13,7 @@ export default function Touchable(props) {
       
           <TouchableOpacity onPress={()=>props.Move()}
         style={props.parentstyle} >
-         <Text style={props.style}>{props.title}</Text> 
+         <Text style={props.Customstyle}>{props.title}</Text> 
           </TouchableOpacity>
      
     

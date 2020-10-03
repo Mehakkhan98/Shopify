@@ -18,19 +18,14 @@ else{
   }
   return (
    <View>
-      <View style={{height:50,
-      width:Platform.OS==='ios'?350:400,  
-      alignSelf:'center', 
-     borderBottomColor:'#03a9f4',
-      marginVertical:10,
-       borderBottomWidth:1,borderRadius:5,flexDirection:'row',padding:10}}>
+      <View style={props.CustomStyle}>
       <Entypo name={props.name} size={32} 
       color="#03a9f4" />
     
         <TextInput  placeholder={props.data} 
         secureTextEntry={eye===false?true:false}
         placeholderColor="#666666" style={{marginLeft:10, color:"gray",fontSize:20,width:Platform.OS==="ios"?250:300}} />
-        {eye===false?<Feather onPress={checkeye} name="eye-off" size={24} color="#03a9f4" />:<Feather name="eye"  onPress={checkeye} size={24} color="'#03a9f4" />}
+        {eye===false?<Feather onPress={checkeye} name="eye-off" size={24} color="#03a9f4" />:<Feather name="eye"  onPress={checkeye} size={24} color="#03a9f4" />}
       
      
       </View>

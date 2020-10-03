@@ -6,7 +6,7 @@ import Drawer from '../Component/Drawer';
 export default function App() {
   return (
   
-    <Drawer independent={true} type="customer"/>
+    <Drawer independent={true} type="admin"/>
   
   );
 }

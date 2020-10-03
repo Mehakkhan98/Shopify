@@ -20,7 +20,7 @@ export default function App() {
               WelCome to   
           </Text>
           <Text  style={styles.heading1}>
-                Shop Cart
+                Royal Cart
           </Text>
           </View>
           <View  style={styles.line}></View>
@@ -31,7 +31,13 @@ export default function App() {
          </View>
       
        <View style={{position:'absolute',bottom:5,alignSelf:'center'}}>
-       <Button title="Let's Start" Method={Lets_start} />
+       <Button 
+       title="Let's Start" 
+       Method={Lets_start}
+        CustomStyle={{height:60,width:Platform.OS==="ios"?350:400,
+         alignSelf:'center', fontSize:20,alignItems:'center',
+        backgroundColor:'red',marginVertical:5,
+     borderRadius:5}} />
        </View>
       
       </View>

@@ -4,9 +4,9 @@
     "slug": "Online_Shopping",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "Splash.jpeg",
+    "icon": "Splash.png",
     "splash": {
-      "image": "Splash.jpeg",
+      "image": "Splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },

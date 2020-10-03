@@ -12,12 +12,8 @@ export default class StudentHome extends Component {
   {
       return (
             <React.Fragment >
-              
             
-                  
-             
-            
-          <NavBar/>   
+          <NavBar type={this.props.type}/>   
          </React.Fragment>
           ); 
     }
