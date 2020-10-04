@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
+import * as Facebook from 'expo-facebook'; 
 import { StyleSheet, Text, View,TouchableOpacity,ScrollView } from 'react-native';
 import Input from '../Component/TextInput';
 import Password from '../Component/Password';
@@ -13,7 +14,26 @@ export default function App() {
   const MovetoLogin=()=>{
     Actions.login();
   }
-  
+   const logInWithFacebook= async()=> {
+   
+
+      await Facebook.initializeAsync('362297608229975');
+      
+      const { type, token } = await Facebook.logInWithReadPermissionsAsync(
+            { permissions:['public_profile', 'email'] },
+          );
+          if (type === 'success') {
+                 const credential=firebase.auth.FacebookAuthProvider.credential(token)
+                  firebase.auth().signInWithCredential(credential).catch((error)=>{
+                    alert(error)
+                  })
+                }
+      
+    
+       
+      
+    
+  }
   return (
     <View style={styles.container}>
         <KeyboardAvoidingView 
@@ -65,7 +85,8 @@ export default function App() {
        <Text style={{color:'gray',fontSize:20,marginTop:3}}>or Sign In With</Text>
        
  
-    <TouchableOpacity style={{marginLeft:50,marginRight:15}}>
+    <TouchableOpacity 
+    onPress={()=>logInWithFacebook()} style={{marginLeft:50,marginRight:15}}>
      <Entypo name="facebook" size={32} color="#03a9f4" />
      </TouchableOpacity>
     <TouchableOpacity style={{marginHorizontal:Platform.OS==="ios"?13:20}}>

@@ -6,16 +6,13 @@ import TouchableText from '../Component/TouchableText';
 import { Entypo } from '@expo/vector-icons'; 
 import {Actions} from 'react-native-router-flux';
 import { FontAwesome5 } from '@expo/vector-icons'; 
-import Logo from '../Component/Logo'
-import Form from '../Component/Form';
-import TopBar from '../Component/SwipeLoginContainer'
+
+import TopBar from '../CustomNavigation/SwipeLoginContainer'
 
 export default function App() {
  
   return (
-   
-     
-     
+  
     
   <TopBar/>
     
