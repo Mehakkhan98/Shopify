@@ -5,7 +5,6 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 import BagsCollection from '../Component/BagsCollection'
 import Jewellary_Collection from '../Component/Jewellary'
 import Western from '../Component/Western_Wear'
-import Accessories_Collection from '../Component/Accessories'
 import Modal from '../Modal/Upload_MOdal';
 
 
@@ -77,7 +76,7 @@ export default function App(props) {
     return (
     
       <Tab.Navigator
-      activeTintColor="#03a9f4">
+      activeTintColor="#0faf9a">
         
         <Tab.Screen name="Bags" component={admin_Bags} />
         <Tab.Screen name="Western Wear" component={admin_Western_Wear} />

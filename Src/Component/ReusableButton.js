@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React,{useState} from 'react';
 import { Entypo } from '@expo/vector-icons'; 
-import { StyleSheet, Text, View,TextInput ,TouchableOpacity,Platform} from 'react-native';
+import { Text, View,TouchableOpacity} from 'react-native';
 import { Feather } from '@expo/vector-icons'; 
 import { Actions } from 'react-native-router-flux';
 

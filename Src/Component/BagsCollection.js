@@ -43,7 +43,8 @@ export default function SuperGridExample() {
            
            <Card title="Bags Collection" content="Western Design in blue color" subtitle="Medium" 
            titlestyle={{fontSize:12,fontWeight:'bold'}} 
-           paragraph={{fontSize:14,color:'gray'}}/>
+           paragraph={{fontSize:14,color:'gray'}} 
+           />
     
           </View>
           

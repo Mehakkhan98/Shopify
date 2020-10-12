@@ -15,10 +15,57 @@ import CheckBox from '../Component/CheckBox'
 import ImagePIcker from '../Component/PickImage'
 import Input from '../Component/TextInput'
 import { setStatusBarBackgroundColor } from "expo-status-bar";
+import { getCameraRollPermissionsAsync } from "expo-image-picker";
+import { TouchableOpacity } from "react-native";
+const keys=[]
 const App = (props) => {
+   
+  const [color, iscolor] = useState(['#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6' ]);
+
+    const [color2, iscolor2] = useState(['#E6B333','#3366E6', '#999966', '#99FF99', '#B34D4D']);
+  
   const [modalVisible, setModalVisible] = useState(false);
   const [start, isstart] = useState(true);
+  const [description, isdescription] = useState('');
+  const [price, isprice] = useState('');
+  const [size, issize] = useState('');
+  const [Status, isStatus] = useState('unchecked');
+  const [selected, isselected] = useState(false);
   const [submit, issubmit] = useState(false);
+  
+  const setdescription=(val)=>{
+    isdescription(val)
+  }
+  const CheckSelect=()=>{
+       if(Status==="unchecked")
+       {
+        isStatus('checked')
+       }
+       else{
+        isStatus('unchecked')
+       }
+  }
+ 
+  const setprice=(val)=>{
+    isprice(val)
+  }
+  const getSize=(val)=>{
+    issize(val)
+  }
+  const getcolor=(val,key)=>{
+    if(selected===false)
+    {
+      
+      isselected(true)
+    }
+  else {
+    // keys=keys.filter(item=>item!=val)
+      isselected(false)
+    }
+   
+    keys.push(val)
+    console.log("Show me my selected Colors",val ,"Key",keys)
+  }
   return (
     <View style={styles.centeredView}>
       <Modal
@@ -35,14 +82,21 @@ const App = (props) => {
               <DataTable>
             
               <Input 
+               value={description}
            CustomStyle={{height:50,
             width:Platform.OS==='ios'?300:350,
           alignSelf:'center',
+         
            borderBottomColor:'#03a9f4',
             marginVertical:15,
              borderBottomWidth:1,borderRadius:5,flexDirection:'row',padding:10}}
+             getval={setdescription}
+             mode="always"
               data="Description" name="info" type="Entypo" />
               <Input 
+                value={price}
+                mode="always"
+                getval={setprice}
            CustomStyle={{height:50,
             width:Platform.OS==='ios'?300:350,
           alignSelf:'center',
@@ -50,47 +104,53 @@ const App = (props) => {
             marginVertical:15,
              borderBottomWidth:1,borderRadius:5,flexDirection:'row',padding:10}} data="Price " name="dollar-sign" type="Feather" />
             <Text style={{color:'gray'}}>Available Size:</Text>
-            <SizePicker/>
+            <SizePicker 
+             value={size}
+             onValueChange={getSize}
+            />
             <Text style={{color:'gray',marginTop:40}}>Available Colors:</Text>
             <View style={{flexDirection:'row',justifyContent:'space-between',marginVertical:15}}>
-            <View style={{borderWidth:1,marginRight:10,height:35,borderRadius:15,backgroundColor:'#ff002a'}}>
-             <CheckBox/>
+            {
+              color.map((val,key)=>(
+               
+            <TouchableOpacity 
+           onPress={()=>getcolor(val,key)}
+            key={key} 
+            
+           style={{ borderWidth:selected===true&&keys.includes(val)?3:1,marginRight:10,height:35,
+            borderRadius:17,borderColor:'red',width:35,backgroundColor:val}}>
+            
+             </TouchableOpacity>
+            
+              ))
+            }
              </View>
-             <View style={{borderWidth:1,marginRight:10,height:35,borderRadius:15,backgroundColor:'#03a9f4'}}>
-             <CheckBox/>
+             <View style={{flexDirection:'row',justifyContent:'space-between',marginVertical:10}}>
+            {
+              color2.map((val,key)=>(
+               
+            <TouchableOpacity
+            onPress={()=>getcolor(val,key)}
+            key={key} style={{borderWidth:selected===true&&keys.includes(val)?3:1,marginRight:10,borderRadius:17,
+            borderColor:'red',height:35,width:35,backgroundColor:val}}>
+            
+             </TouchableOpacity>
+            
+              ))
+            }
              </View>
-             <View style={{borderWidth:1,marginRight:10,height:35,borderRadius:15,backgroundColor:'#D651F8'}}>
-             <CheckBox/>
-             </View>
-             <View style={{borderWidth:1,marginRight:10,height:35,borderRadius:15,backgroundColor:'pink'}}>
-             <CheckBox/>
-             </View>
-             <View style={{borderWidth:1,marginRight:10,height:35,borderRadius:15,backgroundColor:'#ffeb3b'}}>
-             <CheckBox/>
-             </View>
-            </View>
-            <View style={{flexDirection:'row',justifyContent:'space-between',marginVertical:5}}>
-            <View style={{borderWidth:1,marginRight:10,height:35,borderRadius:15,backgroundColor:'#4caf50'}}>
-             <CheckBox/>
-             </View>
-             <View style={{borderWidth:1,marginRight:10,height:35,borderRadius:15,backgroundColor:'black'}}>
-             <CheckBox/>
-             </View>
-             <View style={{borderWidth:1,marginRight:10,height:35,borderRadius:15,backgroundColor:'white'}}>
-             <CheckBox/>
-             </View>
-             <View style={{borderWidth:1,marginRight:10,height:35,borderRadius:15,backgroundColor:'#FBAFF8'}}>
-             <CheckBox/>
-             </View>
-             <View style={{borderWidth:1,marginRight:10,height:35,borderRadius:15,backgroundColor:'#ff5722'}}>
-             <CheckBox/>
-             </View>
-            </View>
+           
+            
+             
             
            
             <View style={{flexDirection:'row',marginTop:30}}>
         <View style={{borderColor:'gray',borderWidth:1,marginRight:10,height:35,borderRadius:15}}>
-        <CheckBox/>
+        <CheckBox
+        value="hotoffer"  
+        Status={Status}
+        Selected={CheckSelect}
+        />
         </View>
         <Text style={{color:'gray',fontSize:16,marginTop:12}}>Hot Offer </Text>
         
@@ -113,10 +173,14 @@ const App = (props) => {
               onPress={() => {
                             if(start===true)
                             {
+                              console.log('Description:',description ,"Price:",price,"Size:",size,"Available Colors",keys,"HOt Offers:",Status)
+                            
                               isstart(false)
+                             
                             }
                             else{
                               isstart(true)
+                            
                             }
               }}
             >
@@ -161,7 +225,8 @@ const App = (props) => {
           setModalVisible(true);
         }}
       >
-         <Ionicons name="md-add-circle" color="red" size={52} />
+         
+         <Ionicons name="md-add-circle" color="#0faf9a" size={58} />
       </TouchableHighlight>
     </View>
   );

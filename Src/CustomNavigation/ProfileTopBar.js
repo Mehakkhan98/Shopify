@@ -9,7 +9,9 @@ import TouchableText from '../Component/TouchableText';
 import { Entypo } from '@expo/vector-icons'; 
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import Form from '../Component/Form'
-
+import WishList from '../Component/WishList';
+import RecievedOrders from '../Component/CollectedOrder';
+import Locations from '../Component/AddLocation';
 function Profile() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center',backgroundColor:'#FFFFFF' }}>
@@ -23,21 +25,21 @@ function Profile() {
 function My_Order() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center',backgroundColor:'#FFFFFF' }}>
-      <Text>My Cart</Text>
+      <RecievedOrders/>
     </View>
   );
 }
 function Wish_List() {
     return (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center',backgroundColor:'#FFFFFF' }}>
-        <Text>My Cart</Text>
+       <WishList/>
       </View>
     );
   }
   function locations() {
     return (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center',backgroundColor:'#FFFFFF' }}>
-        <Text>My Cart</Text>
+        <Locations/>
       </View>
     );
   }
@@ -48,9 +50,9 @@ export default function App() {
   return (
       <Tab.Navigator>
         <Tab.Screen name="Profile" component={Profile} />
-        <Tab.Screen name="My Order" component={My_Order} />
+        <Tab.Screen name="Received" component={My_Order} />
         <Tab.Screen name="WishList" component={Wish_List} />
-        <Tab.Screen name="Locations" component={locations} />
+        <Tab.Screen name="Location" component={locations} />
       </Tab.Navigator>
   );
 }

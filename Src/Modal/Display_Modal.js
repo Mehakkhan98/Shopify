@@ -55,10 +55,10 @@ const App = (props) => {
              </Text>
              <View style={{flexDirection:'row',justifyContent:'space-between'}}>
              {
-              color.map((val)=>(
+              color.map((val,key)=>(
                      
                   
-                    <View style={{height:30,width:30,borderRadius:15,backgroundColor:val,borderColor:'red',borderWidth:1}}>
+                    <View key={key} style={{height:30,width:30,borderRadius:15,backgroundColor:val,borderColor:'red',borderWidth:1}}>
                     </View>
                    
               ))
@@ -117,7 +117,7 @@ const App = (props) => {
           setModalVisible(true);
         }}
       >
-         <MaterialIcons name="pageview" size={26}  color='#03a9f4'  /> 
+         <AntDesign name="shoppingcart" size={26}  color='#0faf9a'  />
       </TouchableHighlight>
     </View>
   );

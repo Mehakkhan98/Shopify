@@ -9,7 +9,7 @@ import { Entypo } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from 'react-native-vector-icons';
 import MenuBarHome from '../Component/MenuBar_Home';
 import { Actions } from 'react-native-router-flux';
-import Settings from '../Pages/Settings';
+import Settings from '../Screens/Settings';
 import CustomStatusBar from '../Component/StatusBar'
 function HomeScreen({ navigation }) {
   return (
@@ -178,10 +178,11 @@ onPress= {()=>Alert.alert(
     return (
    
   
-    <Drawer.Navigator drawerContent={props => CustomDrawerContent_Customer(props)}
+    <Drawer.Navigator 
+    drawerContent={props => CustomDrawerContent_Customer(props)}
      drawerStyle={{backgroundColor:'#FFFFFF',  borderTopRightRadius:15,borderBottomRightRadius:15,width:'65%'}}
      drawerContentOptions={{
-      activeTintColor: '#e91e63',
+      activeTintColor: '#0faf9a',
       activeBackgroundColor:'transparent',
       itemStyle: { marginVertical: 10 },
      
@@ -224,12 +225,11 @@ onPress= {()=>Alert.alert(
     }
     if(props.type==="admin"){
       return (
-   
   
         <Drawer.Navigator drawerContent={props => CustomDrawerContent_admin(props)}
          drawerStyle={{backgroundColor:'#FFFFFF',  borderTopRightRadius:15,borderBottomRightRadius:15,width:'65%'}}
          drawerContentOptions={{
-          activeTintColor: '#e91e63',
+          activeTintColor: '#0faf9a',
           activeBackgroundColor:'transparent',
           itemStyle: { marginVertical: 10 },
          

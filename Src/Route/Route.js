@@ -1,14 +1,14 @@
 import React from 'react'
 import { Router, Scene } from 'react-native-router-flux'
-import Login from '../Pages/LoginCustomer';
-import Home from '../Pages/Home';
-import About from '../Pages/About';
-import  Register from '../Pages/RegisterCustomer';
-import ForgetPassword from '../Pages/ForgetPassword';
-import Start from '../Pages/Lets_Start';
-import Contact from '../Pages/Contact'
+import Login from '../Screens/LoginCustomer';
+import Home from '../Screens/Home';
+import About from '../Screens/About';
+import  Register from '../Screens/RegisterCustomer';
+import ForgetPassword from '../Screens/ForgetPassword';
+import Start from '../Screens/Lets_Start';
+import Contact from '../Screens/Contact'
 import { DarkTheme } from '@react-navigation/native';
-import Admin_Home from '../Pages/Admin_Home'
+import Admin_Home from '../Screens/Admin_Home'
 const Routes = () => (
    <Router>
       <Scene key = "root">

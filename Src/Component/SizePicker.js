@@ -6,11 +6,7 @@ export default class App extends Component {
   constructor(props) {
     super(props)
     
-    this.state = {
-     
-      firstLanguage: '500/-',
-    
-    }
+  
   }
   
   
@@ -25,10 +21,8 @@ export default class App extends Component {
         
         <Picker
           style={styles.onePicker} itemStyle={styles.onePickerItem}
-          selectedValue={this.state.firstLanguage}
-          onValueChange={(itemValue) => {
-            this.setState({firstLanguage: itemValue}) 
-          }}
+          selectedValue={this.props.value}
+          onValueChange={(e)=>this.props.onValueChange(e)}
         >
           <Picker.Item label="Small" value="Small" />
           <Picker.Item label="Medium" value="Medium" />

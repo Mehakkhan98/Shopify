@@ -8,12 +8,14 @@ export default class MyComponent extends React.Component {
 
   render() {
     const { ischecked } = this.state;
+  
     return (
       <Checkbox 
         
-        title='Hot Offers'
-        status={ischecked ? 'checked' : 'unchecked'}
-        onPress={() => { this.setState({ ischecked: !ischecked }); }}
+        title={this.props.value}
+        status={this.props.Status}
+        onPress={()=>this.props.Selected()}
+         
       />
     );
   }

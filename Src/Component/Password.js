@@ -20,12 +20,12 @@ else{
    <View>
       <View style={props.CustomStyle}>
       <Entypo name={props.name} size={32} 
-      color="#03a9f4" />
+      color="#0faf9a" />
     
         <TextInput  placeholder={props.data} 
         secureTextEntry={eye===false?true:false}
-        placeholderColor="#666666" style={{marginLeft:10, color:"gray",fontSize:20,width:Platform.OS==="ios"?250:300}} />
-        {eye===false?<Feather onPress={checkeye} name="eye-off" size={24} color="#03a9f4" />:<Feather name="eye"  onPress={checkeye} size={24} color="#03a9f4" />}
+        placeholderColor="#666666" style={{marginLeft:10, marginTop:5,color:"gray",fontSize:20,width:Platform.OS==="ios"?250:300}} />
+        {eye===false?<Feather onPress={checkeye} name="eye-off" size={24} color="#0faf9a" />:<Feather name="eye"  onPress={checkeye} size={24} color="#03a9f4" />}
       
      
       </View>

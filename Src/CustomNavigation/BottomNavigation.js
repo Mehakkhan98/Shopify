@@ -5,9 +5,10 @@ import { MaterialCommunityIcons } from 'react-native-vector-icons';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { AntDesign ,Fontisto,Ionicons} from '@expo/vector-icons'; 
 import TopBar from './TopTabNavigation';
-import HotOffers from '../Pages/Hot_Offers'
+import HotOffers from '../Screens/Hot_Offers'
 import Profile from './ProfileTopBar'
 import SearchItem from '../Component/Search'
+import Cart from '../Screens/ShoppingCart';
 import Upload from '../Modal/Upload_MOdal'
 function HomeScreen() {
   return (
@@ -60,7 +61,7 @@ function admin_Search() {
 function My_CART() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center',backgroundColor:'#FFFFFF' }}>
-      <Text>My Cart</Text>
+      <Cart/>
     </View>
   );
 }
@@ -78,7 +79,7 @@ export default function App(props) {
     return (
       <Tab.Navigator
       initialRouteName="Home"
-      activeColor="#03a9f4"
+      activeColor="#0faf9a"
       inactiveColor="gray"
       barStyle={{ backgroundColor: 'black' ,}}
       tabStyle={{backgroundColor:'#03a9f4'}}
@@ -144,7 +145,7 @@ export default function App(props) {
   return (
       <Tab.Navigator
       initialRouteName="Home"
-      activeColor="#03a9f4"
+      activeColor="#0faf9a"
       inactiveColor="gray"
       barStyle={{ backgroundColor: 'black' ,}}
       tabStyle={{backgroundColor:'#03a9f4'}}

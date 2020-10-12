@@ -20,13 +20,20 @@ else{
       <View 
       style={props.CustomStyle}
        >
-         {props.type==="Entypo"? <Entypo name={props.name} size={32}  color="#03a9f4"/> 
-         : <Feather name={props.name}  color="#03a9f4" size={28} />}
+         {props.type==="Entypo"? <Entypo name={props.name} size={32}  color="#0faf9a"/> 
+         : <Feather name={props.name}  color="#0faf9a" size={28} />}
       
   
-        <TextInput  placeholder={props.data} 
+        <TextInput onChangeText={(e)=>props.getval(e)}
+         placeholder={props.data} 
+         clearButtonMode={props.mode}
+         minLength={props.min}
+         maxLength={props.max}
+         value={props.value}
+         keyboardType={props.ktype}
         secureTextEntry={false}
-        placeholderColor='#666666' style={{marginLeft:10, color:"gray",fontSize:20, width:Platform.OS==='ios'?250:300}} />
+        placeholderColor='#666666'
+         style={props.textstyle} />
         
       
      
